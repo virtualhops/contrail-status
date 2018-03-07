@@ -381,11 +381,6 @@ def container_status(pod,svc_name):
         if container.status == 'running':
           return 'active'
         else: return 'inactive'
-  if pod == 'kubemanager':
-    for container in client.containers.list(filters={"label":"io.kubernetes.container.name=contrail-kube-manager"}):
-        if container.status == 'running':
-          return 'active'
-        else: return 'inactive'
   return 'inactive'
 
 
@@ -460,9 +455,9 @@ def main():
 
     if vrouter:
         if not vr:
-            print "vRouter is NOT PRESENT\n"
+            print "vRouter is NOT PRESENT"
         else:
-            print "vRouter is PRESENT\n"
+            print "vRouter is PRESENT"
         contrail_service_status('vrouter', options)
         print ""
 
