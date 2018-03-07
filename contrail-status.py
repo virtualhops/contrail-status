@@ -62,7 +62,7 @@ CONTRAIL_SERVICES = {'vrouter' : {'nodemgr' : 'contrail-vrouter-nodemgr',
                      'webui' : ['web',
                                 'job',
                                 'redis'],
-                     'kubemanager' : {'kubemanager': 'contrail-kube-manager'},
+                     'kubernetes' : {'kube-manager': 'contrail-kube-manager'},
                     }
 
 (distribution, os_version, os_id) = \
