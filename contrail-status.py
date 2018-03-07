@@ -430,7 +430,7 @@ def main():
     analytics =  bool(client.containers.list(filters={"label":"net.juniper.contrail.pod=analytics"}))
     analytics_database =  bool(client.containers.list(filters={"label":"net.juniper.contrail.pod=analytics_database"}))
     webui =  bool(client.containers.list(filters={"label":"net.juniper.contrail.pod=webui"}))
-    kubemanager =  bool(client.containers.list(filters={"label":"net.juniper.contrail.pod=kubemanager"}))
+    kubernetes =  bool(client.containers.list(filters={"label":"net.juniper.contrail.pod=kubernetes"}))
 
     vr = False
     lsmodout = None
@@ -485,7 +485,7 @@ def main():
         contrail_service_status('webui', options)
         print ""
 
-    if analytics_database:
+    if kubernetes:
         contrail_service_status('kubernetes', options)
         print ""
 
