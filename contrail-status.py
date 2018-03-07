@@ -390,7 +390,7 @@ def contrail_service_status(pod, options):
     for svc_name in CONTRAIL_SERVICES[pod]:
        psvc = svc_name + ': '
        status = container_status(pod, svc_name)
-       if pod in ['vrouter', 'control', 'config', 'analytics', 'kubemanager']:
+       if pod in ['vrouter', 'control', 'config', 'analytics', 'kubernetes']:
           sandesh_svc = CONTRAIL_SERVICES[pod][svc_name]
           status = get_svc_uve_info(sandesh_svc, status, options.debug,
                 options.detail, options.timeout)
@@ -486,7 +486,7 @@ def main():
         print ""
 
     if analytics_database:
-        contrail_service_status('kubemanager', options)
+        contrail_service_status('kubernetes', options)
         print ""
 
 if __name__ == '__main__':
